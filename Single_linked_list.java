@@ -10,7 +10,7 @@ class Single_linked_list{
     static void Display(Node head){
         Node current=head;
         while(current.next!=null){
-            System.out.print("[" + current.data +"]"+"--> ");
+            System.out.print("[" + current.data +","+ current.next + "]"+"--> ");
             current=current.next;
         }
         System.out.print("[" + current.data +","+current.next+"]");
@@ -86,7 +86,7 @@ class Single_linked_list{
         }
         return head;
     }
-   static void reverseDisplay(Node head){
+    static Node reverseDisplay(Node head){
         Node nextt=null;
         Node prev=null;
         Node current=head;
@@ -96,7 +96,7 @@ class Single_linked_list{
             prev=current;
             current=nextt;
         }
-        Display(prev);
+        return prev;
     }
     public static void main(String args[]){
         Node head=null;
@@ -123,6 +123,7 @@ class Single_linked_list{
         Display(head);
         head=deleteAtBegin(head);
         Display(head);
-        reverseDisplay(head);
+        head=reverseDisplay(head);
+        Display(head);
     }
 }
