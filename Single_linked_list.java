@@ -86,6 +86,18 @@ class Single_linked_list{
         }
         return head;
     }
+   static void reverseDisplay(Node head){
+        Node nextt=null;
+        Node prev=null;
+        Node current=head;
+        while(current!=null){
+            nextt=current.next;
+            current.next=prev;
+            prev=current;
+            current=nextt;
+        }
+        Display(prev);
+    }
     public static void main(String args[]){
         Node head=null;
         //System.out.print(head);
@@ -111,5 +123,6 @@ class Single_linked_list{
         Display(head);
         head=deleteAtBegin(head);
         Display(head);
+        reverseDisplay(head);
     }
 }
